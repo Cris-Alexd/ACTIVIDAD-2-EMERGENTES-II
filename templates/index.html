@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block titulo %}Inicio - Mi Portafolio{% endblock %}
+
+{% block contenido %}
+<div class="section">
+    <div style="text-align: center; padding: 3rem 0;">
+        <h1>¡Bienvenido!</h1>
+        <p style="font-size: 1.2rem; color: #666; margin-bottom: 2rem;">
+            Soy un desarrollador web apasionado por crear soluciones innovadoras y eficientes.
+        </p>
+        
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin: 2rem 0;">
+            <a href="{{ url_for('portafolio') }}" style="
+                display: inline-block;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: white;
+                padding: 0.8rem 2rem;
+                border-radius: 4px;
+                text-decoration: none;
+                font-weight: bold;
+                transition: transform 0.3s;
+            " onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                Ver Mi Portafolio
+            </a>
+            <a href="{{ url_for('contacto') }}" style="
+                display: inline-block;
+                background: #667eea;
+                color: white;
+                padding: 0.8rem 2rem;
+                border-radius: 4px;
+                text-decoration: none;
+                font-weight: bold;
+                transition: transform 0.3s;
+            " onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                Contáctame
+            </a>
+        </div>
+
+        <div style="margin-top: 3rem; padding: 2rem; background: #f9f9f9; border-radius: 8px;">
+            <h3>Sobre Mí</h3>
+            <p style="margin: 1rem 0; line-height: 1.8;">
+                Con experiencia en desarrollo web y una pasión por la programación, 
+                me dedico a crear aplicaciones funcionales y atractivas que resuelven problemas reales.
+            </p>
+            <p style="margin: 1rem 0; line-height: 1.8;">
+                Especializado en Python, Flask, y desarrollo fullstack, siempre buscando 
+                aprender nuevas tecnologías y mejorar mis habilidades.
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock %}

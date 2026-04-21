@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+
+{% block titulo %}Portafolio - Mi Portafolio{% endblock %}
+
+{% block contenido %}
+<div class="section">
+    <h1>Mi Portafolio Personal</h1>
+    
+    <h2 style="margin-top: 2rem;">Proyectos Desarrollados</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin: 2rem 0;">
+        {% for proyecto in proyectos %}
+        <div style="
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        " onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 12px rgba(0,0,0,0.15)'" 
+           onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 6px rgba(0,0,0,0.1)'">
+            <h3>{{ proyecto.titulo }}</h3>
+            <p style="color: #666; margin: 1rem 0;">{{ proyecto.descripcion }}</p>
+            <div style="margin: 1rem 0;">
+                <strong>Tecnologías:</strong>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem;">
+                    {% for tech in proyecto.tecnologias %}
+                    <span style="
+                        background: #667eea;
+                        color: white;
+                        padding: 0.3rem 0.8rem;
+                        border-radius: 20px;
+                        font-size: 0.9rem;
+                    ">{{ tech }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+            <a href="{{ proyecto.url }}" style="
+                display: inline-block;
+                margin-top: 1rem;
+                color: #667eea;
+                text-decoration: none;
+                font-weight: bold;
+            ">Ver Proyecto →</a>
+        </div>
+        {% endfor %}
+    </div>
+
+    <h2 style="margin-top: 3rem;">Habilidades</h2>
+    <div style="margin: 2rem 0;">
+        {% for habilidad in habilidades %}
+        <div style="margin: 1.5rem 0;">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                <strong>{{ habilidad.nombre }}</strong>
+                <span style="color: #667eea;">{{ habilidad.nivel }}%</span>
+            </div>
+            <div style="
+                background: #f0f0f0;
+                border-radius: 4px;
+                height: 10px;
+                overflow: hidden;
+            ">
+                <div style="background: linear-gradient(90deg, #667eea 0%, #764ba2 100%); height: 100%; transition: width 0.3s ease;" 
+                     class="skill-bar" 
+                     data-level="{{ habilidad.nivel }}">
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div style="margin-top: 2rem; padding: 2rem; background: #f9f9f9; border-left: 4px solid #667eea; border-radius: 4px;">
+        <h3>Estadísticas</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin-top: 1rem;">
+            <div style="text-align: center;">
+                <div style="font-size: 2rem; color: #667eea; font-weight: bold;">{{ proyectos|length }}</div>
+                <p style="color: #666;">Proyectos Completados</p>
+            </div>
+            <div style="text-align: center;">
+                <div style="font-size: 2rem; color: #667eea; font-weight: bold;">{{ habilidades|length }}</div>
+                <p style="color: #666;">Habilidades</p>
+            </div>
+            <div style="text-align: center;">
+                <div style="font-size: 2rem; color: #667eea; font-weight: bold;">5+</div>
+                <p style="color: #666;">Años de Experiencia</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Aplicar ancho dinámico a las barras de habilidades
+    document.querySelectorAll('.skill-bar').forEach(bar => {
+        const level = bar.getAttribute('data-level');
+        bar.style.width = level + '%';
+    });
+</script>
+{% endblock %}

@@ -1,0 +1,190 @@
+{% extends "base.html" %}
+
+{% block titulo %}Contacto - Mi Portafolio{% endblock %}
+
+{% block contenido %}
+<div class="section">
+    <h1>Contacto</h1>
+    <p style="font-size: 1.1rem; color: #666; margin-bottom: 2rem;">
+        ¿Tienes una pregunta o quieres trabajar juntos? ¡No dudes en contactarme!
+    </p>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 2rem 0;">
+        <div>
+            <h3>Información de Contacto</h3>
+            <div style="margin: 2rem 0;">
+                <div style="margin: 1.5rem 0;">
+                    <strong style="color: #667eea;">Email</strong>
+                    <p style="color: #666;">tu.email@example.com</p>
+                </div>
+                <div style="margin: 1.5rem 0;">
+                    <strong style="color: #667eea;">Teléfono</strong>
+                    <p style="color: #666;">+591 xxxxxxxx </p>
+                </div>
+                <div style="margin: 1.5rem 0;">
+                    <strong style="color: #667eea;">Ubicación</strong>
+                    <p style="color: #666;">Tu Ciudad, País</p>
+                </div>
+                <div style="margin: 1.5rem 0;">
+                    <strong style="color: #667eea;">Horario de Respuesta</strong>
+                    <p style="color: #666;">Lunes a Viernes, 9am - 6pm</p>
+                </div>
+            </div>
+
+            <div style="margin-top: 2rem; padding: 1.5rem; background: #f9f9f9; border-radius: 8px;">
+                <h4>Redes Sociales</h4>
+                <div style="margin-top: 1rem;">
+                    <a href="#" style="
+                        display: inline-block;
+                        margin: 0.5rem 0.5rem 0.5rem 0;
+                        padding: 0.5rem 1rem;
+                        background: #667eea;
+                        color: white;
+                        text-decoration: none;
+                        border-radius: 4px;
+                        font-weight: bold;
+                    ">LinkedIn</a>
+                    <a href="#" style="
+                        display: inline-block;
+                        margin: 0.5rem 0.5rem 0.5rem 0;
+                        padding: 0.5rem 1rem;
+                        background: #667eea;
+                        color: white;
+                        text-decoration: none;
+                        border-radius: 4px;
+                        font-weight: bold;
+                    ">GitHub</a>
+                    <a href="#" style="
+                        display: inline-block;
+                        margin: 0.5rem 0.5rem 0.5rem 0;
+                        padding: 0.5rem 1rem;
+                        background: #667eea;
+                        color: white;
+                        text-decoration: none;
+                        border-radius: 4px;
+                        font-weight: bold;
+                    ">Twitter</a>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <h3>Formulario de Contacto</h3>
+            <form method="POST" style="margin-top: 1.5rem;">
+                <div style="margin-bottom: 1.5rem;">
+                    <label for="nombre" style="display: block; font-weight: bold; margin-bottom: 0.5rem; color: #667eea;">
+                        Nombre *
+                    </label>
+                    <input 
+                        type="text" 
+                        id="nombre" 
+                        name="nombre" 
+                        required 
+                        style="
+                            width: 100%;
+                            padding: 0.8rem;
+                            border: 1px solid #ddd;
+                            border-radius: 4px;
+                            font-size: 1rem;
+                        "
+                        placeholder="Tu nombre completo"
+                    >
+                </div>
+
+                <div style="margin-bottom: 1.5rem;">
+                    <label for="email" style="display: block; font-weight: bold; margin-bottom: 0.5rem; color: #667eea;">
+                        Email *
+                    </label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        required 
+                        style="
+                            width: 100%;
+                            padding: 0.8rem;
+                            border: 1px solid #ddd;
+                            border-radius: 4px;
+                            font-size: 1rem;
+                        "
+                        placeholder="tu.email@example.com"
+                    >
+                </div>
+
+                <div style="margin-bottom: 1.5rem;">
+                    <label for="asunto" style="display: block; font-weight: bold; margin-bottom: 0.5rem; color: #667eea;">
+                        Asunto *
+                    </label>
+                    <input 
+                        type="text" 
+                        id="asunto" 
+                        name="asunto" 
+                        required 
+                        style="
+                            width: 100%;
+                            padding: 0.8rem;
+                            border: 1px solid #ddd;
+                            border-radius: 4px;
+                            font-size: 1rem;
+                        "
+                        placeholder="Asunto del mensaje"
+                    >
+                </div>
+
+                <div style="margin-bottom: 1.5rem;">
+                    <label for="mensaje" style="display: block; font-weight: bold; margin-bottom: 0.5rem; color: #667eea;">
+                        Mensaje *
+                    </label>
+                    <textarea 
+                        id="mensaje" 
+                        name="mensaje" 
+                        required 
+                        rows="6"
+                        style="
+                            width: 100%;
+                            padding: 0.8rem;
+                            border: 1px solid #ddd;
+                            border-radius: 4px;
+                            font-size: 1rem;
+                            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                            resize: vertical;
+                        "
+                        placeholder="Tu mensaje aquí..."
+                    ></textarea>
+                </div>
+
+                <button 
+                    type="submit" 
+                    style="
+                        width: 100%;
+                        padding: 0.8rem;
+                        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                        color: white;
+                        border: none;
+                        border-radius: 4px;
+                        font-size: 1rem;
+                        font-weight: bold;
+                        cursor: pointer;
+                        transition: transform 0.2s;
+                    "
+                    onmouseover="this.style.transform='scale(1.02)'"
+                    onmouseout="this.style.transform='scale(1)'"
+                >
+                    Enviar Mensaje
+                </button>
+            </form>
+
+            <p style="margin-top: 1rem; color: #999; font-size: 0.9rem;">
+                * Los campos marcados con asterisco son obligatorios
+            </p>
+        </div>
+    </div>
+
+    <div style="margin-top: 2rem; padding: 1.5rem; background: #e8f4f8; border-left: 4px solid #667eea; border-radius: 4px;">
+        <strong style="color: #667eea;">📝 Nota:</strong>
+        <p style="margin-top: 0.5rem; color: #555;">
+            Todos los mensajes son guardados y serán revisados. Te responderé lo antes posible.
+        </p>
+    </div>
+</div>
+{% endblock %}
